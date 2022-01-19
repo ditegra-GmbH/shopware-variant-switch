@@ -1,6 +1,10 @@
 {% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
 
+{% block component_product_box_description %}
+{% endblock %}
+
 {% block component_product_box_variant_characteristics %}
+   
     {{ parent() }}
 
     {% if config('SasVariantSwitch.config.showOnProductCard') %}
@@ -8,8 +12,8 @@
             {% set variantHoverSwitchOptions = {
                 cardType: 'standard'
             } %}
-
             {% block component_offcanvas_product_details_variant_switch %}
+
                 {% if product.extensions.groups %}
                     <div data-wrapper-id="sas-product-configurator-group-wrapper-{{ product.id }}" data-variant-hover-switch="true" data-variant-hover-switch-options="{{ variantHoverSwitchOptions|json_encode }}">
                         {% for group in product.extensions.groups %}
@@ -17,7 +21,9 @@
                             {% block page_product_detail_configurator_group %}
                                 <div class="sas-product-configurator-group">
                                     {% if group.displayType == 'select' %}
-                                        {% sw_include '@Storefront/storefront/component/product/card/group/box-card-group-select.html.twig' %}
+                                        {% if config('SasVariantSwitch.config.showTypeSelectOnProductCard') %}
+                                            {% sw_include '@Storefront/storefront/component/product/card/group/box-card-group-select.html.twig' %}
+                                        {% endif %}
                                     {% else %}
                                         {% sw_include '@Storefront/storefront/component/product/card/group/box-card-group-input.html.twig' %}
                                     {% endif %}

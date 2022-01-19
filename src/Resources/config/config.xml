@@ -12,6 +12,41 @@
             <defaultValue>true</defaultValue>
         </input-field>
 
+         <input-field type="bool">
+            <name>showTypeMediaOnProductCard</name>
+            <label>Show property type MEDIA on product listing card</label>
+            <label lang="de-DE">Eigenschaften-Darstellung BILD auf der Produktliste anzeigen</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <input-field type="bool">
+            <name>showTypeTextOnProductCard</name>
+            <label>Show property type TEXT on product listing card</label>
+            <label lang="de-DE">Eigenschaften-Darstellung TEXT auf der Produktliste anzeigen</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <input-field type="bool">
+            <name>showTypeSelectOnProductCard</name>
+            <label>Show property type SELECT on product listing card</label>
+            <label lang="de-DE">Eigenschaften-Darstellung DROPDOWN auf der Produktliste anzeigen</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <input-field type="bool">
+            <name>showTypeColorOnProductCard</name>
+            <label>Show property type COLOR on product listing card</label>
+            <label lang="de-DE">Eigenschaften-Darstellung FARBE auf der Produktliste anzeigen</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <input-field type="bool">
+            <name>showHeaderOnProductCard</name>
+            <label>Show variant switch header on product listing</label>
+            <label lang="de-DE">Varianten Überschrift auf der Produktliste anzeigen</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
         <input-field type="bool">
             <name>previewVariantOnHover</name>
             <label>Variant switch when hovering a variant property on product listing</label>

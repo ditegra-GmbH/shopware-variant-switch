@@ -9,6 +9,7 @@ use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use SasVariantSwitch\Storefront\Event\ProductBoxLoadedEvent;
 use SasVariantSwitch\Storefront\Page\ProductListingConfigurationLoader;
+use Shopware\Core\Content\Product\Events\ProductSearchResultEvent;
 
 class ProductListingResultLoadedSubscriber implements EventSubscriberInterface
 {
@@ -33,7 +34,24 @@ class ProductListingResultLoadedSubscriber implements EventSubscriberInterface
             ProductBoxLoadedEvent::class => [
                 ['handleProductBoxLoadedRequest', 201],
             ],
+            ProductSearchResultEvent::class => [
+                ['handleProductSearchRequest', 201],
+            ]
         ];
+    }
+
+    public function handleProductSearchRequest(ProductSearchResultEvent $event): void
+    {
+        $context = $event->getSalesChannelContext();
+
+        if (!$this->systemConfigService->getBool(SasVariantSwitch::SHOW_ON_PRODUCT_CARD, $context->getSalesChannelId())) {
+            return;
+        }
+
+        /** @var ProductCollection $entities */
+        $entities = $event->getResult()->getEntities();
+
+        $this->listingConfigurationLoader->loadListing($entities, $context);
     }
 
     public function handleProductListingLoadedRequest(ProductListingResultEvent $event): void
