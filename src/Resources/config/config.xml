@@ -12,13 +12,6 @@
             <defaultValue>true</defaultValue>
         </input-field>
 
-         <input-field type="bool">
-            <name>showTypeMediaOnProductCard</name>
-            <label>Show property type MEDIA on product listing card</label>
-            <label lang="de-DE">Eigenschaften-Darstellung BILD auf der Produktliste anzeigen</label>
-            <defaultValue>true</defaultValue>
-        </input-field>
-
         <input-field type="bool">
             <name>showTypeTextOnProductCard</name>
             <label>Show property type TEXT on product listing card</label>
@@ -26,54 +19,17 @@
             <defaultValue>true</defaultValue>
         </input-field>
 
-        <input-field type="bool">
-            <name>showTypeSelectOnProductCard</name>
-            <label>Show property type SELECT on product listing card</label>
-            <label lang="de-DE">Eigenschaften-Darstellung DROPDOWN auf der Produktliste anzeigen</label>
-            <defaultValue>true</defaultValue>
-        </input-field>
+        <component name="sw-entity-single-select">
+            <name>groupNameListing</name>
+            <entity>property_group</entity>
+            <label>Choose a property group to show on a listing page</label>
+            <label lang="de-DE">Wählen Sie eine Eigenschaftsgruppe aus, die auf einer Auflistungsseite angezeigt werden soll</label>
+        </component>
 
-        <input-field type="bool">
-            <name>showTypeColorOnProductCard</name>
-            <label>Show property type COLOR on product listing card</label>
-            <label lang="de-DE">Eigenschaften-Darstellung FARBE auf der Produktliste anzeigen</label>
-            <defaultValue>true</defaultValue>
+        <input-field type="text">
+            <name>showTitleForGroupInListing</name>
+            <label>Title for selected group above</label>
+            <label lang="de-DE">Titel für die oben ausgewählte Gruppe</label>
         </input-field>
-
-        <input-field type="bool">
-            <name>showHeaderOnProductCard</name>
-            <label>Show variant switch header on product listing</label>
-            <label lang="de-DE">Varianten Überschrift auf der Produktliste anzeigen</label>
-            <defaultValue>true</defaultValue>
-        </input-field>
-
-        <input-field type="bool">
-            <name>previewVariantOnHover</name>
-            <label>Variant switch when hovering a variant property on product listing</label>
-            <label lang="de-DE">Variantenwechsel beim Hovern über eine Varianteneigenschaft auf der Produktliste</label>
-            <defaultValue>true</defaultValue>
-        </input-field>
-
-        <input-field type="bool">
-            <name>showOnOffCanvasCart</name>
-            <label>Show on off-canvas cart</label>
-            <label lang="de-DE">Auf dem Off-Canvas-Wagen anzeigen</label>
-            <defaultValue>true</defaultValue>
-        </input-field>
-
-        <input-field type="bool">
-            <name>showOnCartPage</name>
-            <label>Show on cart page</label>
-            <label lang="de-DE">Auf der Warenkorb-Seite anzeigen</label>
-            <defaultValue>true</defaultValue>
-        </input-field>
-
-        <input-field type="bool">
-            <name>showOnCheckoutConfirmPage</name>
-            <label>Show on checkout confirm page</label>
-            <label lang="de-DE">Auf der Seite "Kasse bestätigen" anzeigen</label>
-            <defaultValue>true</defaultValue>
-        </input-field>
-
     </card>
 </config>
