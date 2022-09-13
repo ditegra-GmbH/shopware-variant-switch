@@ -1,6 +1,6 @@
 {% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
 
-{% block component_product_box_variant_characteristics %}
+{% block component_product_box_name %}
     {{ parent() }}
     {% if config('SasVariantSwitch.config.showOnProductCard') %}
         {% block page_product_detail_configurator_groups %}
